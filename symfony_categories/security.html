@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Certification Symfony</title>
+    <title>Quiz Certification Symfony - Security</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 </head>
 <body class="bg-gray-100 p-6">
 <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-    <h1 class="text-2xl font-bold mb-4 text-center">Quiz Certification Symfony</h1>
+    <h1 class="text-2xl font-bold mb-4 text-center">Quiz Certification Symfony - Security</h1>
     <form id="quiz-form">
         <div id="questions-container"></div>
         <button type="submit" class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
@@ -19,23 +19,45 @@
 </div>
 
 <script>
-    async function fetchYamlFile() {
-        const yamlFileUrl = "https://raw.githubusercontent.com/efficience-it/certification-symfony/7.0/data/Console/built_in_commands.yaml";  // URL brute du fichier YAML
-        try {
-            const response = await fetch(yamlFileUrl);
-            if (!response.ok) {
-                throw new Error('Échec de la récupération du fichier');
-            }
-            const yamlText = await response.text();  // Récupère le contenu brut du fichier
-            const jsonData = jsyaml.load(yamlText);  // Convertir le YAML en JSON (si vous utilisez js-yaml)
+    async function fetchYamlFiles() {
+        // Liste des URLs de fichiers YAML
+        const yamlFileUrls = [
+            "security/access_control_rules.yaml",
+            "security/authentication.yaml",
+            "security/authenticators.yaml",
+            "security/authorization.yaml",
+            "security/configuration.yaml",
+            "security/firewalls.yaml",
+            "security/password_hashers.yaml",
+            "security/providers.yaml",
+            "security/roles.yaml",
+            "security/users.yaml",
+            "security/voters_and_voting_strategies.yaml",
+        ];
 
-            if (jsonData.questions) {
-                displayQuestions(jsonData.questions);  // Appel pour afficher les questions
+        const allQuestions = [];
+
+        try {
+            for (const url of yamlFileUrls) {
+                const response = await fetch("https://raw.githubusercontent.com/efficience-it/certification-symfony/7.0/data/" +url);
+                if (response.ok) {
+                    const yamlText = await response.text();
+                    const jsonData = jsyaml.load(yamlText);
+                    if (jsonData.questions) {
+                        allQuestions.push(...jsonData.questions); // Ajoute les questions du fichier à la liste globale
+                    }
+                }else {
+                    console.log(`Échec de la récupération du fichier à l'URL : ${url}`);
+                }
+            }
+
+            if (allQuestions.length > 0) {
+                displayQuestions(allQuestions); // Appel pour afficher les questions
             } else {
-                document.getElementById("questions-container").innerHTML = "<p class='text-red-600'>Aucune question trouvée dans le fichier YAML.</p>";
+                document.getElementById("questions-container").innerHTML = "<p class='text-red-600'>Aucune question trouvée dans les fichiers YAML.</p>";
             }
         } catch (error) {
-            console.error("Erreur lors de la récupération du fichier YAML :", error);
+            console.error("Erreur lors de la récupération des fichiers YAML :", error);
             document.getElementById("questions-container").innerHTML = "<p class='text-red-600'>Une erreur est survenue.</p>";
         }
     }
@@ -56,7 +78,7 @@
             const questionId = `question-${index}`;
 
             // Vérification de la structure des réponses
-            const answers = question.answers || [];  // Utilisation d'un tableau vide si "answers" est manquant
+            const answers = question.answers || [];
             const optionsHTML = answers.map((answer, i) => {
                 const inputId = `q${index}-option${i}`;
                 return `
@@ -74,7 +96,7 @@
                     <span class="self-end text-sm text-gray-500">${index + 1}</span>
                 </h5>
                 <div class="question-body mt-2">
-                    <p class="question-text font-medium">${question.question}</p>
+
                     <div class="answers-container mt-2">${optionsHTML}</div>
                     <div class="hidden mt-2 p-2 bg-green-100 text-green-800 rounded answer-section">
                         ✅ Réponse correcte : <span class="correct-answer">${answers.filter(a => a.correct).map(a => a.value).join(", ")}</span><br>
@@ -91,9 +113,8 @@
         });
     }
 
-
     // Lancer la récupération et affichage des questions à la fin du chargement de la page
-    fetchYamlFile();
+    fetchYamlFiles();
 </script>
 </body>
 </html>
