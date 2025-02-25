@@ -1,1 +1,84 @@
-<html><body>test</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symfony Test Categories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #2e3a47; /* Darker blue for the header */
+            color: #ffffff;
+        }
+        .btn-link {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-link:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header p-5 text-center">
+    <h1 class="text-4xl">Entrainement Symfony</h1>
+    <p class="mt-2 text-lg">Sélectionnez une catégorie pour commencer l'entraînement</p>
+</header>
+
+<div class="container max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+        <a href="general.html" class="btn-link py-2 px-4 rounded-full">Entrainement Général</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/automated_tests.html" class="btn-link py-2 px-4 rounded-full">Automated Tests</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/controllers.html" class="btn-link py-2 px-4 rounded-full">Controllers</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/data_validation.html" class="btn-link py-2 px-4 rounded-full">Data Validation</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/dependency_injection.html" class="btn-link py-2 px-4 rounded-full">Dependency Injection</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/forms.html" class="btn-link py-2 px-4 rounded-full">Forms</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/http.html" class="btn-link py-2 px-4 rounded-full">HTTP</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/http_caching.html" class="btn-link py-2 px-4 rounded-full">HTTP Caching</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/miscellaneous.html" class="btn-link py-2 px-4 rounded-full">Miscellaneous</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/php_and_web_security.html" class="btn-link py-2 px-4 rounded-full">PHP & Web Security</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/routing.html" class="btn-link py-2 px-4 rounded-full">Routing</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/security.html" class="btn-link py-2 px-4 rounded-full">Security</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/symfony_architecture.html" class="btn-link py-2 px-4 rounded-full">Symfony Architecture</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/templating_with_twig.html" class="btn-link py-2 px-4 rounded-full">Templating with Twig</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
