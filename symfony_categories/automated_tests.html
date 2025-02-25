@@ -23,13 +23,13 @@
         const yamlFileUrl = "https://raw.githubusercontent.com/efficience-it/certification-symfony/7.0/data/Console/built_in_commands.yaml";  // URL brute du fichier YAML
         try {
             const response = await fetch(yamlFileUrl);
-            if (!response.ok) {
+                if (!response.ok) {
                 throw new Error('Échec de la récupération du fichier');
-            }
+                }
             const yamlText = await response.text();  // Récupère le contenu brut du fichier
             const jsonData = jsyaml.load(yamlText);  // Convertir le YAML en JSON (si vous utilisez js-yaml)
 
-            if (jsonData.questions) {
+                if (jsonData.questions) {
                 displayQuestions(jsonData.questions);  // Appel pour afficher les questions
             } else {
                 document.getElementById("questions-container").innerHTML = "<p class='text-red-600'>Aucune question trouvée dans le fichier YAML.</p>";
@@ -90,7 +90,6 @@
             document.querySelectorAll(".answer-section").forEach(el => el.classList.remove("hidden"));
         });
     }
-
 
     // Lancer la récupération et affichage des questions à la fin du chargement de la page
     fetchYamlFile();
