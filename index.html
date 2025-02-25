@@ -3,62 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tests Symfony</title>
+    <title>Symfony Test Categories</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #2e3a47; /* Darker blue for the header */
+            color: #ffffff;
+        }
+        .btn-link {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-link:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            margin-top: 30px;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body>
 
-<header class="bg-blue-600 text-white py-6">
-    <h1 class="text-3xl text-center font-semibold">Symfony Test Categories</h1>
+<header class="header p-5 text-center">
+    <h1 class="text-4xl">Entrainement Symfony</h1>
+    <p class="mt-2 text-lg">Sélectionnez une catégorie pour commencer l'entraînement</p>
 </header>
 
-<div class="container mx-auto p-6">
-    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/automated_tests.html" class="text-blue-600 font-bold text-lg">Automated Tests</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/controllers.html" class="text-blue-600 font-bold text-lg">Controllers</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/data_validation.html" class="text-blue-600 font-bold text-lg">Data Validation</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/dependency_injection.html" class="text-blue-600 font-bold text-lg">Dependency Injection</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/forms.html" class="text-blue-600 font-bold text-lg">Forms</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/http.html" class="text-blue-600 font-bold text-lg">HTTP</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/http_caching.html" class="text-blue-600 font-bold text-lg">HTTP Caching</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/miscellaneous.html" class="text-blue-600 font-bold text-lg">Miscellaneous</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/php_and_web_security.html" class="text-blue-600 font-bold text-lg">PHP and Web Security</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/routing.html" class="text-blue-600 font-bold text-lg">Routing</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/security.html" class="text-blue-600 font-bold text-lg">Security</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/symfony_architecture.html" class="text-blue-600 font-bold text-lg">Symfony Architecture</a>
-        </li>
-        <li class="bg-white p-6 rounded-lg shadow-lg hover:transform hover:scale-105 transition duration-300">
-            <a href="category/templating_with_twig.html" class="text-blue-600 font-bold text-lg">Templating with Twig</a>
-        </li>
-    </ul>
+<div class="container max-w-4xl mx-auto">
+    <div class="text-center mb-10">
+        <a href="general.html" class="btn-link py-2 px-4 rounded-full">Entrainement Général</a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/automated_tests.html" class="btn-link py-2 px-4 rounded-full">Automated Tests</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/controllers.html" class="btn-link py-2 px-4 rounded-full">Controllers</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/data_validation.html" class="btn-link py-2 px-4 rounded-full">Data Validation</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/dependency_injection.html" class="btn-link py-2 px-4 rounded-full">Dependency Injection</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/forms.html" class="btn-link py-2 px-4 rounded-full">Forms</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/http.html" class="btn-link py-2 px-4 rounded-full">HTTP</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/http_caching.html" class="btn-link py-2 px-4 rounded-full">HTTP Caching</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/miscellaneous.html" class="btn-link py-2 px-4 rounded-full">Miscellaneous</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/php_and_web_security.html" class="btn-link py-2 px-4 rounded-full">PHP & Web Security</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/routing.html" class="btn-link py-2 px-4 rounded-full">Routing</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/security.html" class="btn-link py-2 px-4 rounded-full">Security</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/symfony_architecture.html" class="btn-link py-2 px-4 rounded-full">Symfony Architecture</a>
+        </div>
+        <div class="text-center bg-white shadow-lg rounded-lg p-6 hover:shadow-xl">
+            <a href="category/templating_with_twig.html" class="btn-link py-2 px-4 rounded-full">Templating with Twig</a>
+        </div>
+    </div>
 </div>
-
-<footer class="bg-blue-600 text-white py-4 text-center">
-    <p>&copy; 2025 Symfony Tests | All Rights Reserved</p>
-</footer>
-
 </body>
 </html>
