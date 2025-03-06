@@ -36,7 +36,6 @@ Notre outil reprend les principaux sujets évalués lors de la certification Sym
     
 -   Divers (Miscellaneous)
     
-    
 ## 🎯 Objectif
 
 Faciliter votre montée en compétences sur Symfony et maximiser vos chances de réussite à la certification !
@@ -49,7 +48,6 @@ Nous sommes ouverts aux contributions ! Vous pouvez proposer des améliorations,
     
 -   [Certification Twig](https://github.com/efficience-it/certification-twig)
     
-
-📩 Une question ? Contactez-nous !
+📩 Une question ? [Contactez-nous !](https://www.itefficience.com/contact)
 
 🚀 Prêt(e) à relever le défi ? Commencez dès maintenant votre entraînement et boostez vos compétences Symfony !
